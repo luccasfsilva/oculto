@@ -255,6 +255,7 @@ footer {
                     </div>
                 </fieldset>
                 <button type="submit" class="btn-submit">Registrar</button>
+                <button type="button" class="btn-return" onclick="returnToForm()">Voltar ao Formulário</button>
             </form>
         </div>
     </main>
@@ -264,36 +265,16 @@ footer {
         </div>
     </footer>
     <script>
-  const spreadsheetId = '18w9bO8JMnnKp8QLEUKnM1yFUC6TcEISpgWEsYy1DQn8';
-
-  function loadGAPI() {
-    gapi.load('client:auth2', async () => {
-      await gapi.client.init({
-        apiKey: 'YOUR_API_KEY',
-        clientId: 'YOUR_CLIENT_ID',
-        discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-        scope: 'https://www.googleapis.com/auth/spreadsheets',
-      });
-
-      gapi.auth2.getAuthInstance().signIn();
-    });
-  }
-
-  async function appendData() {
-    const range = 'Sheet1!A1';
-    const values = [
-      ['Exemplo', 'Dados', 'Inseridos'], // Dados a serem enviados
-    ];
-
-    await gapi.client.sheets.spreadsheets.values.append({
-      spreadsheetId,
-      range,
-      valueInputOption: 'RAW',
-      resource: { values },
-    });
-
-    console.log('Dados adicionados!');
-  }
+    function returnToForm() {
+        // Verifica se o formulário existe e o reinicia
+        const form = document.getElementById('hygieneForm');
+        if (form) {
+            form.reset();
+            alert("O formulário foi reiniciado!");
+        } else {
+            alert("Formulário não encontrado!");
+        }
+    }
 </script>
 
 </body>
