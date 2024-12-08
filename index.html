@@ -1,0 +1,300 @@
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Higiene das Mãos</title>
+   <title>Pedidos de Impressão</title>
+      <link rel="stylesheet" href="styles.css">
+    <style type="text/css">
+      /* Fontes e Resets */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    background: #00796b;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Formulário */
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.form-group, fieldset {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.checkbox-group label, .radio-group label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+legend {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #007bff;
+}
+
+/* Botão */
+.btn-submit {
+    background: #00796b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background: #0056b3;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #00796b;
+    color: #fff;
+    margin-top: 20px;
+    border-top: 5px solid #0056b3;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    legend {
+        font-size: 1rem;
+    }
+
+    .btn-submit {
+        font-size: 0.9rem;
+    }
+}
+</style> 
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Registro de Higiene das Mãos</h1>
+            <p>Monitore a adesão às práticas de higiene de forma eficiente</p>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <form action="https://api.sheetmonkey.io/form/gNvVC2qjTK7N7vj2vVyopH" method="post"
+                  id="hygieneForm" class="form-card">
+                <h2>Preencha os Dados</h2>
+                <div class="form-group">
+                    <label for="observador">Observador:</label>
+                    <select id="observador" name="observador" required>
+                        <option value="">Selecione</option>
+                        <option value="oculto">Oculto</option>
+                        <option value="scih">SCIH</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+                <div class="form-group">
+                    <label for="profissao">Profissão:</label>
+                    <select id="profissao" name="profissao" required>
+                        <option value="">Selecione</option>
+                        <option value="tec_enf">Técnico de Enfermagem</option>
+                        <option value="enf">Enfermeiro</option>
+                        <option value="med">Médico</option>
+                        <option value="fisio">Fisioterapeuta</option>
+                        <option value="nutri">Nutricionista</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="turno">Turno:</label>
+                    <select id="turno" name="turno" required>
+                        <option value="">Selecione</option>
+                        <option value="manha">Manhã</option>
+                        <option value="tarde">Tarde</option>
+                        <option value="noite">Noite</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="setor">Setor:</label>
+                    <select id="setor" name="setor" required>
+                        <option value="">Selecione</option>
+                        <option value="UTI ADU">UTI ADU</option>
+                        <option value="UTI PED">UTI PED</option>
+                        <option value="UTI NEO">UTI NEO</option>
+                        <option value="PSA">PSA</option>
+                        <option value="PSI">PSI</option>
+                        <option value="PSGO">PSGO</option>
+                        <option value="PSORT">PSORT</option>
+                        <option value="7°">7°</option>
+                        <option value="6°">6°</option>
+                        <option value="PED">PED</option>
+                        <option value="CC">CC</option>
+                        <option value="CO">CO</option>
+                        <option value="HOSP DIA">HOSP DIA</option>
+                        <option value="SADT">SADT</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="oportunidades">Quantidade de Oportunidades:</label>
+                    <input type="number" id="oportunidades" name="oportunidades" min="0" required>
+                </div>
+                <fieldset>
+                    <legend>Indicações:</legend>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="indicacoes" value="ant_pact" required> 
+                            Antes do contato com paciente
+                        </label>
+                        <label>
+                            <input type="checkbox" name="indicacoes" value="ant_proced"> 
+                            Antes de procedimento
+                        </label>
+                        <label>
+                            <input type="checkbox" name="indicacoes" value="ap_fluid"> 
+                            Após risco de exposição a fluidos
+                        </label>
+                        <label>
+                            <input type="checkbox" name="indicacoes" value="ap_pact"> 
+                            Após contato com paciente
+                        </label>
+                        <label>
+                            <input type="checkbox" name="indicacoes" value="ap_proxim"> 
+                            Após contato com proximidades do paciente
+                        </label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Ação:</legend>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="acao" value="alcool" required> Higiene com álcool
+                        </label>
+                        <label>
+                            <input type="radio" name="acao" value="sabonete"> Higiene com sabonete
+                        </label>
+                        <label>
+                            <input type="radio" name="acao" value="nenhum"> Nenhuma
+                        </label>
+                        <label>
+                            <input type="radio" name="acao" value="luva"> Uso de luvas
+                        </label>
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn-submit">Registrar</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 - Registro de Higiene das Mãos. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>
+  const spreadsheetId = '18w9bO8JMnnKp8QLEUKnM1yFUC6TcEISpgWEsYy1DQn8';
+
+  function loadGAPI() {
+    gapi.load('client:auth2', async () => {
+      await gapi.client.init({
+        apiKey: 'YOUR_API_KEY',
+        clientId: 'YOUR_CLIENT_ID',
+        discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+        scope: 'https://www.googleapis.com/auth/spreadsheets',
+      });
+
+      gapi.auth2.getAuthInstance().signIn();
+    });
+  }
+
+  async function appendData() {
+    const range = 'Sheet1!A1';
+    const values = [
+      ['Exemplo', 'Dados', 'Inseridos'], // Dados a serem enviados
+    ];
+
+    await gapi.client.sheets.spreadsheets.values.append({
+      spreadsheetId,
+      range,
+      valueInputOption: 'RAW',
+      resource: { values },
+    });
+
+    console.log('Dados adicionados!');
+  }
+</script>
+
+</body>
+</html>
