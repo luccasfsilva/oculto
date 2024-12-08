@@ -34,10 +34,6 @@ function doPost(e) {
   }
 }
 
-function returnToForm() {
-    const form = document.getElementById("hygieneForm");
-    if (form) form.reset(); // Reinicia o formulário
-}
 
 // Busca os dados da planilha
 fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_RANGE}?key=${API_KEY}`)
