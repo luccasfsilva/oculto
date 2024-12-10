@@ -212,26 +212,26 @@ footer {
                     <label for="oportunidades">Quantidade de Oportunidades:</label>
                     <input type="number" id="oportunidades" name="oportunidades" min="0" required>
                 </div>
-              <fieldset>
-    <legend>Indicações:</legend>
-    <div class="checkbox-group">
-        <label>
-            <input type="checkbox" name="indicacoes_ant_pact" value="1"> Antes do contato com paciente
-        </label>
-        <label>
-            <input type="checkbox" name="indicacoes_ant_proced" value="1"> Antes de procedimento
-        </label>
-        <label>
-            <input type="checkbox" name="indicacoes_ap_fluid" value="1"> Após risco de exposição a fluidos
-        </label>
-        <label>
-            <input type="checkbox" name="indicacoes_ap_pact" value="1"> Após contato com paciente
-        </label>
-        <label>
-            <input type="checkbox" name="indicacoes_ap_proxim" value="1"> Após contato com proximidades do paciente
-        </label>
-    </div>
-</fieldset>
+               <fieldset>
+        <legend>Indicações:</legend>
+        <div class="checkbox-group">
+            <label>
+                <input type="checkbox" name="indicacoes[]" value="Antes do contato com paciente"> Antes do contato com paciente
+            </label>
+            <label>
+                <input type="checkbox" name="indicacoes[]" value="Antes de procedimento"> Antes de procedimento
+            </label>
+            <label>
+                <input type="checkbox" name="indicacoes[]" value="Após risco de exposição a fluidos"> Após risco de exposição a fluidos
+            </label>
+            <label>
+                <input type="checkbox" name="indicacoes[]" value="Após contato com paciente"> Após contato com paciente
+            </label>
+            <label>
+                <input type="checkbox" name="indicacoes[]" value="Após contato com proximidades do paciente"> Após contato com proximidades do paciente
+            </label>
+        </div>
+    </fieldset>
                     <legend>Ação:</legend>
                     <div class="radio-group">
                         <label>
