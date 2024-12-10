@@ -5,49 +5,36 @@ const SHEET_RANGE = "Sheet1!A1:H"; // Intervalo que cobre seus dados
 
 function doPost(e) {
   try {
+    // Abre a planilha
     const sheet = SpreadsheetApp.openById("18w9bO8JMnnKp8QLEUKnM1yFUC6TcEISpgWEsYy1DQn8");
     const ws = sheet.getActiveSheet();
 
+    // Extrai os dados enviados
     const params = e.parameter;
-    const indicacoes = params.indicacoes; // Array com as indicações selecionadas
 
-    if (Array.isArray(indicacoes)) {
-      // Adiciona uma linha para cada indicação
-      indicacoes.forEach(indicacao => {
-        ws.appendRow([
-          new Date(), // Data e hora
-          params.observador || "",
-          params.data || "",
-          params.profissao || "",
-          params.setor || "",
-          params.oportunidades || "",
-          indicacao || "", // Cada indicação em uma linha
-          params.acao || ""
-        ]);
-      });
-    } else {
-      // Caso apenas uma indicação tenha sido marcada
-      ws.appendRow([
-        new Date(),
-        params.observador || "",
-        params.data || "",
-        params.profissao || "",
-        params.setor || "",
-        params.oportunidades || "",
-        indicacoes || "",
-        params.acao || ""
-      ]);
-    }
+    // Adiciona os dados à planilha
+    ws.appendRow([
+      new Date(), // Adiciona a data e hora do registro
+      params.observador,
+      params.data,
+      params.hora,
+      params.profissao,
+      
+      params.setor,
+      params.oportunidades,
+      params.indicacoes,
+      params.acao
+    ]);
 
-    return ContentService.createTextOutput(
-      JSON.stringify({ success: true })
-    ).setMimeType(ContentService.MimeType.JSON);
+    // Resposta de sucesso
+    return ContentService.createTextOutput(JSON.stringify({ success: true })).setMimeType(ContentService.MimeType.JSON);
   } catch (err) {
-    return ContentService.createTextOutput(
-      JSON.stringify({ success: false, error: err.message })
-    ).setMimeType(ContentService.MimeType.JSON);
+    // Retorna erro caso falhe
+    return ContentService.createTextOutput(JSON.stringify({ success: false, error: err.message })).setMimeType(ContentService.MimeType.JSON);
   }
 }
+
+
 
 // Busca os dados da planilha
 fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_RANGE}?key=${API_KEY}`)
@@ -97,8 +84,6 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_
             console.warn("Nenhum dado encontrado na planilha.");
         }
     })
-  
     .catch(error => {
         console.error("Erro ao acessar a planilha:", error);
     });
-
