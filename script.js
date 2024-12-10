@@ -6,7 +6,7 @@ const SHEET_RANGE = "Sheet1!A1:H"; // Intervalo que cobre seus dados
 function doPost(e) {
   try {
     // Abre a planilha
-    const sheet = SpreadsheetApp.openById("18w9bO8JMnnKp8QLEUKnM1yFUC6TcEISpgWEsYy1DQn8");
+    const sheet = SpreadsheetApp.openById("1VLoTMb4XgPdFY7W25arAW6O5gViZb7v3Sttp4H7u3uU");
     const ws = sheet.getActiveSheet();
 
     // Extrai os dados enviados
