@@ -5,31 +5,29 @@ const SHEET_RANGE = "Sheet1!A1:H"; // Intervalo que cobre seus dados
 
 function doPost(e) {
   try {
-    // Abre a planilha
     const sheet = SpreadsheetApp.openById("18w9bO8JMnnKp8QLEUKnM1yFUC6TcEISpgWEsYy1DQn8");
     const ws = sheet.getActiveSheet();
 
-    // Extrai os dados enviados
     const params = e.parameter;
 
-    // Adiciona os dados à planilha
+    // Adiciona os dados separados para "Indicações"
     ws.appendRow([
-      new Date(), // Adiciona a data e hora do registro
+      new Date(), // Data e hora
       params.observador,
       params.data,
-      params.hora,
       params.profissao,
-      
       params.setor,
       params.oportunidades,
-      params.indicacoes,
+      params.ind_ant_pact || 0,
+      params.ind_ant_proced || 0,
+      params.ind_ap_fluid || 0,
+      params.ind_ap_pact || 0,
+      params.ind_ap_proxim || 0,
       params.acao
     ]);
 
-    // Resposta de sucesso
     return ContentService.createTextOutput(JSON.stringify({ success: true })).setMimeType(ContentService.MimeType.JSON);
   } catch (err) {
-    // Retorna erro caso falhe
     return ContentService.createTextOutput(JSON.stringify({ success: false, error: err.message })).setMimeType(ContentService.MimeType.JSON);
   }
 }
