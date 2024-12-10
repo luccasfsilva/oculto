@@ -10,25 +10,28 @@ function doPost(e) {
 
     const params = e.parameter;
 
-    // Adiciona os dados separados para "Indicações"
     ws.appendRow([
-      new Date(), // Data e hora
-      params.observador,
-      params.data,
-      params.profissao,
-      params.setor,
-      params.oportunidades,
-      params.ind_ant_pact || 0,
-      params.ind_ant_proced || 0,
-      params.ind_ap_fluid || 0,
-      params.ind_ap_pact || 0,
-      params.ind_ap_proxim || 0,
-      params.acao
+      new Date(), // Data e hora do registro
+      params.observador || "",
+      params.data || "",
+      params.profissao || "",
+      params.setor || "",
+      params.oportunidades || "",
+      params.indicacoes_ant_pact || "",
+      params.indicacoes_ant_proced || "",
+      params.indicacoes_ap_fluid || "",
+      params.indicacoes_ap_pact || "",
+      params.indicacoes_ap_proxim || "",
+      params.acao || ""
     ]);
 
-    return ContentService.createTextOutput(JSON.stringify({ success: true })).setMimeType(ContentService.MimeType.JSON);
+    return ContentService.createTextOutput(
+      JSON.stringify({ success: true })
+    ).setMimeType(ContentService.MimeType.JSON);
   } catch (err) {
-    return ContentService.createTextOutput(JSON.stringify({ success: false, error: err.message })).setMimeType(ContentService.MimeType.JSON);
+    return ContentService.createTextOutput(
+      JSON.stringify({ success: false, error: err.message })
+    ).setMimeType(ContentService.MimeType.JSON);
   }
 }
 
