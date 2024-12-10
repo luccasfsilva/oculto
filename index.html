@@ -212,32 +212,26 @@ footer {
                     <label for="oportunidades">Quantidade de Oportunidades:</label>
                     <input type="number" id="oportunidades" name="oportunidades" min="0" required>
                 </div>
-                <fieldset>
-                    <legend>Indicações:</legend>
-                    <div class="checkbox-group">
-                        <label>
-                            <input type="checkbox" name="indicacoes" value="ant_pact" required> 
-                            Antes do contato com paciente
-                        </label>
-                        <label>
-                            <input type="checkbox" name="indicacoes" value="ant_proced"> 
-                            Antes de procedimento
-                        </label>
-                        <label>
-                            <input type="checkbox" name="indicacoes" value="ap_fluid"> 
-                            Após risco de exposição a fluidos
-                        </label>
-                        <label>
-                            <input type="checkbox" name="indicacoes" value="ap_pact"> 
-                            Após contato com paciente
-                        </label>
-                        <label>
-                            <input type="checkbox" name="indicacoes" value="ap_proxim"> 
-                            Após contato com proximidades do paciente
-                        </label>
-                    </div>
-                </fieldset>
-                <fieldset>
+               <fieldset>
+    <legend>Indicações:</legend>
+    <div class="checkbox-group">
+        <label>
+            <input type="checkbox" name="ind_ant_pact" value="1"> Antes do contato com paciente
+        </label>
+        <label>
+            <input type="checkbox" name="ind_ant_proced" value="1"> Antes de procedimento
+        </label>
+        <label>
+            <input type="checkbox" name="ind_ap_fluid" value="1"> Após risco de exposição a fluidos
+        </label>
+        <label>
+            <input type="checkbox" name="ind_ap_pact" value="1"> Após contato com paciente
+        </label>
+        <label>
+            <input type="checkbox" name="ind_ap_proxim" value="1"> Após contato com proximidades do paciente
+        </label>
+    </div>
+</fieldset>
                     <legend>Ação:</legend>
                     <div class="radio-group">
                         <label>
