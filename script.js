@@ -9,21 +9,35 @@ function doPost(e) {
     const ws = sheet.getActiveSheet();
 
     const params = e.parameter;
+    const indicacoes = params.indicacoes; // Array com as indicações selecionadas
 
-    ws.appendRow([
-      new Date(), // Data e hora do registro
-      params.observador || "",
-      params.data || "",
-      params.profissao || "",
-      params.setor || "",
-      params.oportunidades || "",
-      params.indicacoes_ant_pact || "",
-      params.indicacoes_ant_proced || "",
-      params.indicacoes_ap_fluid || "",
-      params.indicacoes_ap_pact || "",
-      params.indicacoes_ap_proxim || "",
-      params.acao || ""
-    ]);
+    if (Array.isArray(indicacoes)) {
+      // Adiciona uma linha para cada indicação
+      indicacoes.forEach(indicacao => {
+        ws.appendRow([
+          new Date(), // Data e hora
+          params.observador || "",
+          params.data || "",
+          params.profissao || "",
+          params.setor || "",
+          params.oportunidades || "",
+          indicacao || "", // Cada indicação em uma linha
+          params.acao || ""
+        ]);
+      });
+    } else {
+      // Caso apenas uma indicação tenha sido marcada
+      ws.appendRow([
+        new Date(),
+        params.observador || "",
+        params.data || "",
+        params.profissao || "",
+        params.setor || "",
+        params.oportunidades || "",
+        indicacoes || "",
+        params.acao || ""
+      ]);
+    }
 
     return ContentService.createTextOutput(
       JSON.stringify({ success: true })
@@ -34,7 +48,6 @@ function doPost(e) {
     ).setMimeType(ContentService.MimeType.JSON);
   }
 }
-
 
 // Busca os dados da planilha
 fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_RANGE}?key=${API_KEY}`)
