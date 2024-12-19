@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
      <style type="text/css">
          /* Fontes e Resets */
+/* Fontes e Resets */
 body, h1, h2, p {
     margin: 0;
     padding: 0;
@@ -64,8 +65,23 @@ label {
     margin-bottom: 15px;
     font-weight: 500;
 }
-
-input, select, textarea {
+input {
+    width: 40%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+ select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+ textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -74,10 +90,33 @@ input, select, textarea {
     font-size: 1rem;
 }
 
-.checkbox-group label, .radio-group label {
-    display: block;
-    margin-bottom: 10px;
+/* Geral para labels */
+.checkbox-group label,
+.radio-group label {
+    display: flex; /* Flexbox para alinhamento horizontal */
+    align-items: center; /* Alinha verticalmente os itens */
+    gap: 0px; /* Espaço entre o checkbox/radio e o texto */
+    margin-bottom: 8px; /* Espaçamento entre os itens */
+    text-align: left; /* Garante que o texto fique alinhado à esquerda */
 }
+
+/* Resetando margens dos inputs */
+.checkbox-group input[type="checkbox"],
+.radio-group input[type="radio"] {
+    margin: 0; /* Remove margens padrão */
+    flex-shrink: 0; /* Impede que o input encolha no flexbox */
+}
+
+/* Ajustes para corrigir alinhamento vertical */
+.checkbox-group label input,
+.radio-group label input {
+    position: relative; /* Permite ajustes precisos */
+    top: 0; /* Garante alinhamento vertical */
+    transform: translateY(1px); /* Pequeno ajuste, se necessário */
+}
+
+
+
 
 fieldset {
     border: 1px solid #ccc;
@@ -139,6 +178,7 @@ footer {
         font-size: 0.9rem;
     }
 }
+
 </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
