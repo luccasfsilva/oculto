@@ -3,6 +3,7 @@ const SHEET_ID = "18w9bO8JMnnKp8QLEUKnM1yFUC6TcEISpgWEsYy1DQn8"; // Substitua pe
 const API_KEY = "1s4GOAl3ns5EfZdUrEmaylkvs4J-1mXnAEntKi_sPIBd3Ym7fizB2_M5n"; // Substitua pela sua chave de API
 const SHEET_RANGE = "Sheet1!A1:H"; // Intervalo que cobre seus dados
 
+
 function doPost(e) {
   try {
     // Abre a planilha
@@ -87,3 +88,28 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_
     .catch(error => {
         console.error("Erro ao acessar a planilha:", error);
     });
+function handleFormSubmit(event) {
+    event.preventDefault(); // Impede o comportamento padrão do envio
+    const form = event.target;
+
+    // Opção: Enviar dados manualmente usando fetch
+    fetch(form.action, {
+      method: form.method,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: new URLSearchParams(new FormData(form))
+    }).then(response => {
+      if (response.ok) {
+        alert("Registro enviado com sucesso!"); // Mensagem de sucesso
+        form.reset(); // Reseta o formulário
+      } else {
+        alert("Ocorreu um erro ao enviar o registro.");
+      }
+    }).catch(error => {
+      console.error("Erro:", error);
+      alert("Erro ao enviar o registro.");
+    });
+
+    return false; // Garante que o formulário não será enviado novamente
+  }
