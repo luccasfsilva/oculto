@@ -88,3 +88,4 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_
     .catch(error => {
         console.error("Erro ao acessar a planilha:", error);
     });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
