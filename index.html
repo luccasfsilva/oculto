@@ -308,32 +308,35 @@ footer {
 
     // Opção: Enviar dados manualmente usando fetch
     fetch(form.action, {
-      method: form.method,
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: new URLSearchParams(new FormData(form))
+        method: form.method,
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams(new FormData(form))
     }).then(response => {
-      if (response.ok) {
-        // Esconde o formulário e exibe uma mensagem com o botão de voltar
-        const container = document.querySelector('.container');
-        container.innerHTML = `
-          <div style="text-align: center;">
-            <h2>Registro enviado com sucesso!</h2>
-            <p>Obrigado por contribuir para o monitoramento de higiene das mãos.</p>
-            <button class="btn-submit" onclick="location.reload()">Voltar ao formulário</button>
-          </div>
-        `;
-      } else {
-        alert("Ocorreu um erro ao enviar o registro.");
-      }
+        if (response.ok) {
+            // Esconde o formulário e exibe uma mensagem com o botão de voltar
+            const container = document.querySelector('.container');
+            container.innerHTML = `
+                <div style="text-align: center;">
+                    <h2>Registro enviado com sucesso!</h2>
+                    <p>Obrigado por contribuir para o monitoramento de higiene das mãos.</p>
+                    <button class="btn-submit" onclick="location.reload()">Voltar ao formulário</button>
+                </div>
+            `;
+            // Rola a tela para o topo
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            alert("Ocorreu um erro ao enviar o registro.");
+        }
     }).catch(error => {
-      console.error("Erro:", error);
-      alert("Erro ao enviar o registro.");
+        console.error("Erro:", error);
+        alert("Erro ao enviar o registro.");
     });
 
     return false; // Garante que o formulário não será enviado novamente
-  }
+}
+
 </script>
 
 </body>
