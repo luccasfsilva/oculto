@@ -315,8 +315,15 @@ footer {
       body: new URLSearchParams(new FormData(form))
     }).then(response => {
       if (response.ok) {
-        alert("Registro enviado com sucesso!"); // Mensagem de sucesso
-        form.reset(); // Reseta o formulário
+        // Esconde o formulário e exibe uma mensagem com o botão de voltar
+        const container = document.querySelector('.container');
+        container.innerHTML = `
+          <div style="text-align: center;">
+            <h2>Registro enviado com sucesso!</h2>
+            <p>Obrigado por contribuir para o monitoramento de higiene das mãos.</p>
+            <button class="btn-submit" onclick="location.reload()">Voltar ao formulário</button>
+          </div>
+        `;
       } else {
         alert("Ocorreu um erro ao enviar o registro.");
       }
