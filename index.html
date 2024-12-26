@@ -252,48 +252,52 @@ footer {
                 </div>
                 <fieldset>
                     <legend>Indicações:</legend>
+                    <select id="indicacoes" name="indicacoes" required>
                     <div class="checkbox-group">
                         <label>
-                            <input type="checkbox" name="indicacoes" value="ant_pact" required> 
+                            <input type="checkbox" name="indicacoes" value="ant_pact"> 
                             Antes do contato com paciente
                         </label>
                         <label>
-                            <input type="checkbox" name="indicacoes" value="ant_proced" required> 
+                            <input type="checkbox" name="indicacoes" value="ant_proced"> 
                             Antes de procedimento
                         </label>
                         <label>
-                            <input type="checkbox" name="indicacoes" value="ap_fluid" required> 
+                            <input type="checkbox" name="indicacoes" value="ap_fluid"> 
                             Após risco de exposição a fluidos
                         </label>
                         <label>
-                            <input type="checkbox" name="indicacoes" value="ap_pact" required> 
+                            <input type="checkbox" name="indicacoes" value="ap_pact"> 
                             Após contato com paciente
                         </label>
                         <label>
-                            <input type="checkbox" name="indicacoes" value="ap_proxim" required> 
+                            <input type="checkbox" name="indicacoes" value="ap_proxim"> 
                             Após contato com proximidades do paciente
                         </label>
+                    </select>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend>Ação:</legend>
+                    <select id="acao" name="acao" required>
                     <div class="checkbox-group"required>
                         <label>
-                            <input type="checkbox" name="acao" value="alcool" required>
+                            <input type="checkbox" name="acao" value="alcool">
                             Higiene com álcool
                         </label>
                         <label>
-                            <input type="checkbox" name="acao" value="sabonete" required>
+                            <input type="checkbox" name="acao" value="sabonete">
                             Higiene com sabonete
                         </label>
                         <label>
-                            <input type="checkbox" name="acao" value="nenhum" required>
+                            <input type="checkbox" name="acao" value="nenhum">
                             Nenhuma
                         </label>
                         <label>
-                            <input type="checkbox" name="acao" value="luva" required> 
+                            <input type="checkbox" name="acao" value="luva"> 
                             Uso de luvas
                         </label>
+                    </select>
                     </div>
                 </fieldset>
                 <button type="submit" class="btn-submit">Registrar</button>
