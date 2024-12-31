@@ -310,15 +310,6 @@ footer {
     event.preventDefault(); // Impede o comportamento padrão do envio
     const form = event.target;
 
-
-      document.getElementById("myForm").addEventListener("submit", function(event) {
-        const checkboxes = document.querySelectorAll('input[name="indicacoes"]:checked');
-        if (checkboxes.length === 0) {
-            alert("Por favor, selecione pelo menos uma opção.");
-            event.preventDefault(); // Impede o envio do formulário
-        }
-    });
-
     // Opção: Enviar dados manualmente usando fetch
     fetch(form.action, {
         method: form.method,
@@ -346,7 +337,21 @@ footer {
         console.error("Erro:", error);
         alert("Erro ao enviar o registro.");
     });
-
+      
+document.getElementById("myForm").addEventListener("submit", function(event) {
+        const checkboxes = document.querySelectorAll('input[name="indicacoes"]:checked');
+        if (checkboxes.length === 0) {
+            alert("Por favor, selecione pelo menos uma opção.");
+            event.preventDefault(); // Impede o envio do formulário
+        }
+    });
+      document.getElementById("myForm").addEventListener("submit", function(event) {
+        const checkboxes = document.querySelectorAll('input[name="acao"]:checked');
+        if (checkboxes.length === 0) {
+            alert("Por favor, selecione pelo menos uma opção.");
+            event.preventDefault(); // Impede o envio do formulário
+        }
+    });
     return false; // Garante que o formulário não será enviado novamente
 }
 
