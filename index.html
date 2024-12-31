@@ -101,18 +101,16 @@ input {
 }
 
 /* Resetando margens dos inputs */
-.checkbox-group input[type="checkbox"],
-.radio-group input[type="radio"] {
+.checkbox-group input[type="checkbox"] {
     margin: 0; /* Remove margens padrão */
     flex-shrink: 0; /* Impede que o input encolha no flexbox */
 }
 
 /* Ajustes para corrigir alinhamento vertical */
-.checkbox-group label input,
-.radio-group label input {
+.checkbox-group label input {
     position: relative; /* Permite ajustes precisos */
     top: 0; /* Garante alinhamento vertical */
-    transform: translateY(1px); /* Pequeno ajuste, se necessário */
+    transform: translateY(2px); /* Pequeno ajuste, se necessário */
 }
 
 
