@@ -252,7 +252,7 @@ footer {
                 </div>
                 <fieldset>
                     <legend>Indicações:</legend>
-                    <div class="checkbox-group" required>
+                    <div class="checkbox-group">
                         <label>
                             <input type="checkbox" name="indicacoes" value="ant_pact"> 
                             Antes do contato com paciente
@@ -309,6 +309,15 @@ footer {
   function handleFormSubmit(event) {
     event.preventDefault(); // Impede o comportamento padrão do envio
     const form = event.target;
+
+
+      document.getElementById("myForm").addEventListener("submit", function(event) {
+        const checkboxes = document.querySelectorAll('input[name="indicacoes"]:checked');
+        if (checkboxes.length === 0) {
+            alert("Por favor, selecione pelo menos uma opção.");
+            event.preventDefault(); // Impede o envio do formulário
+        }
+    });
 
     // Opção: Enviar dados manualmente usando fetch
     fetch(form.action, {
