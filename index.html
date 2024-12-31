@@ -306,11 +306,25 @@ footer {
         </div>
     </footer>
   <script>
-  function handleFormSubmit(event) {
+ function handleFormSubmit(event) {
     event.preventDefault(); // Impede o comportamento padrão do envio
-    const form = event.target;
 
-    // Opção: Enviar dados manualmente usando fetch
+    const form = event.target;
+    const indicacoesChecked = document.querySelectorAll('input[name="indicacoes"]:checked').length;
+    const acaoChecked = document.querySelectorAll('input[name="acao"]:checked').length;
+
+    // Verifica se pelo menos uma checkbox foi selecionada em cada grupo
+    if (indicacoesChecked === 0) {
+        alert("Por favor, selecione pelo menos uma indicação.");
+        return false;
+    }
+
+    if (acaoChecked === 0) {
+        alert("Por favor, selecione pelo menos uma ação.");
+        return false;
+    }
+
+    // Enviar dados manualmente usando fetch
     fetch(form.action, {
         method: form.method,
         headers: {
@@ -337,23 +351,10 @@ footer {
         console.error("Erro:", error);
         alert("Erro ao enviar o registro.");
     });
-      
-document.getElementById("myForm").addEventListener("submit", function(event) {
-        const checkboxes = document.querySelectorAll('input[name="indicacoes"]:checked');
-        if (checkboxes.length === 0) {
-            alert("Por favor, selecione pelo menos uma opção.");
-            event.preventDefault(); // Impede o envio do formulário
-        }
-    });
-      document.getElementById("myForm").addEventListener("submit", function(event) {
-        const checkboxes = document.querySelectorAll('input[name="acao"]:checked');
-        if (checkboxes.length === 0) {
-            alert("Por favor, selecione pelo menos uma opção.");
-            event.preventDefault(); // Impede o envio do formulário
-        }
-    });
+
     return false; // Garante que o formulário não será enviado novamente
 }
+
 
 </script>
 
