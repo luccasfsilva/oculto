@@ -15,9 +15,16 @@ body, h1, h2, p {
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f7f9;
+    background: url('https://img.freepik.com/vetores-premium/bolhas-de-ar-sibilantes-subaquaticas-bebida-gaseificada-ilustracao-vetorial_313437-1195.jpg');
+    height: 100vh;
     color: #333;
     line-height: 1.6;
+   animation: animate 15s infinite alternate; /* Animação aplicada */
+}
+
+@keyframes animate {
+  0% {background-position: 0}
+  100% {background-position: 200%}
 }
 
 .container {
