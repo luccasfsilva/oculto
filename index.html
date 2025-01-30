@@ -258,9 +258,6 @@ footer {
                         <option value="SADT">SADT</option>
                     </select>
                 </div>
-                 <label for="range">Oportunidade:</label>
-  <input type="range" id="range" name="range" min="1" max="8" value="1" step="1">
-  <span id="output">1</span>
                 <fieldset>
                     <legend>Indicações:</legend>
                     <div class="checkbox-group">
@@ -317,13 +314,6 @@ footer {
         </div>
     </footer>
   <script>
-      const rangeInput = document.getElementById('range');
-    const output = document.getElementById('output');
-
-    // Atualiza o valor exibido quando o controle deslizante é movido
-    rangeInput.addEventListener('input', () => {
-      output.textContent = rangeInput.value;
-    });
  function handleFormSubmit(event) {
     event.preventDefault(); // Impede o comportamento padrão do envio
 
