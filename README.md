@@ -1,20 +1,5 @@
-# Oculto 🌌
 
-Bem-vindo ao **Oculto**, um projeto desenvolvido para explorar conceitos de design criativo, interatividade e programação web. Este site é uma experiência visual e funcional que combina arte digital e tecnologia.
-
-## 🌟 Funcionalidades
-
-- Interface minimalista e elegante.
-- Elementos interativos que criam uma experiência imersiva.
-- Design responsivo, adaptado para diferentes dispositivos.
-
-## 🛠️ Tecnologias Utilizadas
-
-- **HTML5**: Estrutura semântica e organizada.
-- **CSS3**: Estilização moderna, com animações e transições.
-- **JavaScript**: Interatividade e dinamismo.
-
-## 🚀 Como Acessar
+## 🚀 Acessar site indisponivel neste link
 
 O site está disponível em: [**luccasfsilva.github.io/oculto**](https://luccasfsilva.github.io/oculto/)
 
